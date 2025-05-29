@@ -1,4 +1,8 @@
-To ensure our website performs well under different conditions, I’d organize performance testing into three main areas: First, I’d use tools like Lighthouse to measure how fast key pages (like the homepage, cart, and checkout) load for real users on both desktop and mobile. Second, I’d run load tests on our APIs using tools like k6 or JMeter to see how the backend handles multiple users making requests at the same time, especially during actions like adding to cart or checking out. Lastly, I’d monitor real-time performance using analytics tools (like Google Analytics or Vercel Analytics) to track actual user experience across locations and devices. All these tests would be integrated into our CI pipeline so we catch performance issues early, before they reach production.
+To ensure our website performs well under different conditions, I’d organize performance testing into three main areas:
+First, I’d use tools like Lighthouse to measure how fast key pages (like the homepage, cart, and checkout) load for real users on both desktop and mobile.
+Second, I’d run load tests on our APIs using tools like k6 or JMeter to see how the backend handles multiple users making requests at the same time, especially during actions like adding to cart or checking out. 
+Lastly, I’d monitor real-time performance using analytics tools (like Google Analytics or Vercel Analytics) to track actual user experience across locations and devices. 
+All these tests would be integrated into our CI pipeline so we catch performance issues early, before they reach production.
 
 
 
