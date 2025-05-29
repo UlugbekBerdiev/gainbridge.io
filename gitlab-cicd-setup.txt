@@ -1,0 +1,46 @@
+GitLab CI/CD Setup
+
+1. Create .gitlab-ci.yml:
+```yaml
+image: mcr.microsoft.com/playwright:v1.40.0-focal
+
+stages:
+  - test
+  - deploy
+
+install-dependencies:
+  stage: .pre
+  script:
+    - npm ci
+    - npx playwright install chromium
+
+run-tests:
+  stage: test
+  script:
+    - npx playwright test
+  artifacts:
+    paths:
+      - playwright-report/
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying to production"
+  only:
+    - main
+  when: manual
+
+2. Setup Steps:
+   - Add .gitlab-ci.yml to project root
+   - Set up GitLab repository
+   - Configure environment variables in GitLab
+   - Push code to trigger pipeline
+
+3. Pipeline Flow:
+   - Install dependencies
+   - Run tests
+   - Deploy (manual trigger)
+
+4. Required Variables:
+   - NPM_TOKEN
+   - DEPLOY_KEY 
